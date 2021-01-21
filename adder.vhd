@@ -53,6 +53,7 @@ entity adder is
     Port (a_i: in std_logic_vector (WIDTHA - 1 downto 0);
            b_i: in std_logic_vector (WIDTHB - 1 downto 0);           
            res_o: out std_logic_vector(WIDTHA - 1 downto 0));
+
 end adder;
 
 architecture Behavioral of adder is
@@ -62,7 +63,7 @@ architecture Behavioral of adder is
     attribute use_dsp : string;
     attribute use_dsp of Behavioral : architecture is "yes";
     --------------------------------------------------------------------------------------------------------
-begin    
+begin
     signed_add: if SIGNED_UNSIGNED = "signed" generate 
                  res_o <= std_logic_vector(signed(a_i) + signed(b_i));                     
     end generate;
